@@ -6,17 +6,13 @@ export class MovieController {
   constructor(private readonly movieService: MovieService) {}
 
   @Get('/get/genres')
-  async getGenres() {
-    return this.movieService.getGenres();
+  async getGenres(@Query('language') language?: string) {
+    return this.movieService.getGenres(language);
   }
 
   @Get()
-  async getMovies(
-    @Query('genre') genre?: string,
-    @Query('keyword') keyword?: string,
-    @Query('page') page: number = 1,
-  ) {
-    return this.movieService.getMovies(genre, keyword, page);
+  async getMovies(@Query('language') language?: string) {
+    return this.movieService.getMovies(language);
   }
 
   @Get(':id')

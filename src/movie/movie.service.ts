@@ -16,8 +16,8 @@ export class MovieService {
     this.API_KEY = this.configService.get<string>('API_KEY');
   }
 
-  async getGenres() {
-    const url = `${this.API_BASE_URL}/genre/movie/list`;
+  async getGenres(language?: string) {
+    const url = `${this.API_BASE_URL}/genre/movie/list?language=${language ?? 'en'}`;
     const response = await firstValueFrom(
       this.httpService.get(url, {
         headers: {
@@ -28,16 +28,8 @@ export class MovieService {
     return response.data;
   }
 
-  async getMovies(genre?: string, keyword?: string, page: number = 1) {
-    let url = `${this.API_BASE_URL}/discover/movie?page=${page}`;
-
-    if (genre) {
-      url = `${this.API_BASE_URL}/discover/movie?page=${page}&genre=${genre}`;
-    }
-    if (keyword) {
-      url = `${this.API_BASE_URL}/search/movie?page=${page}&query=${keyword}`;
-    }
-
+  async getMovies(language?: string) {
+    const url = `${this.API_BASE_URL}/discover/movie?language=${language ? `${language}-US` : 'en-US'}`;
     const response = await firstValueFrom(
       this.httpService.get(url, {
         headers: {

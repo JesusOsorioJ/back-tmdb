@@ -44,8 +44,12 @@ export class FavoriteController {
   }
 
   @Get('getById/:id')
-  async getMovieById(@Req() req: any, @Param('id') id: string) {
+  async getMovieById(
+    @Req() req: any,
+    @Param('id') id: string,
+    @Query('language') language?: string,
+  ) {
     const user = req.user;
-    return this.favoriteService.getMovieById(user, id);
+    return this.favoriteService.getMovieById(user, id, language);
   }
 }

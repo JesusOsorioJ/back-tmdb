@@ -88,15 +88,22 @@ export class FavoriteService {
     return { ...response.data, results };
   }
 
-  async getMovieById(user: User, movieId: string): Promise<any[]> {
+  async getMovieById(
+    user: User,
+    movieId: string,
+    language?: string,
+  ): Promise<any[]> {
     let response;
     try {
       response = await firstValueFrom(
-        this.httpService.get(`${this.API_BASE_URL}/movie/${movieId}`, {
-          headers: {
-            Authorization: `Bearer ${this.API_KEY}`,
+        this.httpService.get(
+          `${this.API_BASE_URL}/movie/${movieId}?language=${language ? `${language}-US` : 'en-US'}`,
+          {
+            headers: {
+              Authorization: `Bearer ${this.API_KEY}`,
+            },
           },
-        }),
+        ),
       );
     } catch (error) {
       response = error;
