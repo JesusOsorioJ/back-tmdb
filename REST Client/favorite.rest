@@ -1,0 +1,7 @@
+### Marcar Favorito
+POST http://localhost:3000/favorites/597
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbmUuZG9lQGV4YW1wbGUuY29tIiwic3ViIjoyLCJpYXQiOjE3Mjc5MTc2MTUsImV4cCI6MTcyNzkyMTIxNX0.8-lmeTl5IMpOD5nYLhFLRxMkJdgmcKvEf5pfMrzGYg8
+
+### Obtener Lista de Favoritos
+GET http://localhost:3000/favorites
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbmUuZG9lQGV4YW1wbGUuY29tIiwic3ViIjoyLCJpYXQiOjE3Mjc5MTc2MTUsImV4cCI6MTcyNzkyMTIxNX0.8-lmeTl5IMpOD5nYLhFLRxMkJdgmcKvEf5pfMrzGYg8

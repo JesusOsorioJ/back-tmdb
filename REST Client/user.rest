@@ -1,0 +1,36 @@
+### Obtener Todos los Usuarios
+GET http://localhost:8000/users
+
+### Obtener Usuario por ID
+GET http://localhost:8000/users/1
+
+### Actualizar Usuario
+PATCH http://localhost:8000/users/1
+Content-Type: application/json
+
+{
+  "name": "John Updated",
+  "email": "john.updated@example.com"
+}
+
+### Soft Delete Usuario
+DELETE http://localhost:8000/users/1
+
+### Registro de Usuario (Sign Up)
+POST http://localhost:8000/auth/signup
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "jane.doe@example.com",
+  "password": "securePassword123"
+}
+
+### Login
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+  "email": "hola@mundo.com",
+  "password": "hola@mundo.com"
+}

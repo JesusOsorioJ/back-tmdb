@@ -1,0 +1,12 @@
+### Obtener los generos
+GET http://localhost:8000/movies/get/genres
+
+### Obtener películas con paginación
+GET http://localhost:8000/movies?page=1&keyword=titanic
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhvbGFAbXVuZG8uY29tIiwic3ViIjo2LCJpYXQiOjE3MjgwMDY0MzcsImV4cCI6MTcyODAxMDAzN30.g9-_ujx2ARzDJOzctsdWsVl_-BS-lki4I1nF9x3Ed0I
+
+### Obtener películas por género o palabra clave, con paginación
+GET http://localhost:8000/movies?genre={{genre}}&keyword={{keyword}}&page={{page}}
+
+### Obtener película por ID
+GET http://localhost:8000/movies/{{movieId}}
