@@ -13,7 +13,7 @@ import { ConfigModule } from '@nestjs/config';
     HttpModule,
     UserModule,
     ConfigModule,
-  ], // Usa HttpModule en lugar de HttpClientModule
+  ],
   providers: [FavoriteService],
   controllers: [FavoriteController],
 })

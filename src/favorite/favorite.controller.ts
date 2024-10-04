@@ -1,7 +1,6 @@
 import {
   Controller,
   Post,
-  Delete,
   Get,
   Param,
   Req,
@@ -12,7 +11,7 @@ import { FavoriteService } from './favorite.service';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @Controller('favorites')
-@UseGuards(JwtAuthGuard) // Protege las rutas con autenticación JWT
+@UseGuards(JwtAuthGuard)
 export class FavoriteController {
   constructor(private readonly favoriteService: FavoriteService) {}
 
@@ -44,7 +43,6 @@ export class FavoriteController {
     );
   }
 
-  // Obtener una película por ID
   @Get('getById/:id')
   async getMovieById(@Req() req: any, @Param('id') id: string) {
     const user = req.user;

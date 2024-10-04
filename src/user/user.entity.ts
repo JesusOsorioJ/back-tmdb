@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { Favorite } from '../favorite/favority.entity'; // Asegúrate de que la ruta sea correcta
+import { Favorite } from '../favorite/favority.entity';
 
 @Entity()
 export class User {
@@ -19,5 +19,5 @@ export class User {
   deleted: boolean;
 
   @OneToMany(() => Favorite, (favorite) => favorite.user)
-  favorites: Favorite[]; // Agregar esta propiedad
+  favorites: Favorite[];
 }
